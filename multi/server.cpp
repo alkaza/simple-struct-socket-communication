@@ -76,14 +76,14 @@ void* parseLoop(void *arg)
 			if (databuf.isPidError)
 				std::cout<<"pid error: "<<databuf.pidError<<std::endl;
 			if (databuf.isLaserScan){
-				std::cout<<"pid error: ";
+				std::cout<<"laser scan: ";
 				for (int i=0; i<1080; i++){
 					std::cout<<databuf.laserScan[i]<<" ";
 				}
 				std::cout<<std::endl;
 			}
 			if (databuf.isPos)
-				std::cout<<"pid error: "<<databuf.pos<<std::endl;
+				std::cout<<"position: "<<databuf.pos<<std::endl;
 		}
 	}
 	/* XXX: Fix above box for server part */
