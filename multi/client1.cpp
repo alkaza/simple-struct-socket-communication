@@ -28,8 +28,7 @@ int main()
 	}
 
 	/* XXX: Fix below box for client part */
-	int i;
-	for (i=0;i<10; i++)
+	for (int i=0;i<10; i++)
 	{
 		struct data databuf = {};
 
