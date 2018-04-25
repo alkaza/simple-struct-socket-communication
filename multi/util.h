@@ -10,27 +10,35 @@ struct data
 {
 	/* steering angle */
 	bool isSteeringAngle;	
-	float32 steeringAngle;
+	float steeringAngle;
 
-	/* motor speed */
+	/* motor velocity */
 	bool isMotorSpeed;
-	float32 motorSpeed;
+	float motorSpeed;
 	
 	/* servo pwm */
 	bool isServoPWM;
-	int16 servoPWM;
+	int servoPWM;
 	
 	/* esc pwm */
 	book isEscPWM;
-	int16 escPWM;
+	int escPWM;
+
+	/* pid velocity */
+	bool isPidVelocity;
+	float pidVelocity;
+	
+	/* pid error */
+	bool isPidError;
+	float pidError;
 	
 	/* laser scan */
 	bool isLaserScan;
-	float32 laserScan [];
+	float laserScan [1080];
 	
 	/* position */
 	bool isPos;
-	float64 pos;
+	double pos;
 };
 
 #endif
