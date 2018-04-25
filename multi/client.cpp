@@ -38,7 +38,7 @@ int main()
 
 			/* is there is a data */
 			databuf.isSteeringAngle = true;
-			databuf.steeringAngle = 30.1 + i;
+			databuf.steeringAngle = 15 + i;
 			std::cout<<"Message created"<<std::endl;
 			if (isConnected)
 				send(sockfd, &databuf, sizeof(databuf), 0);
