@@ -12,7 +12,7 @@ struct data
 	bool isSteeringAngle;	
 	float steeringAngle;
 
-	/* motor velocity */
+	/* motor speed */
 	bool isMotorSpeed;
 	float motorSpeed;
 	
@@ -24,9 +24,9 @@ struct data
 	book isEscPWM;
 	int escPWM;
 
-	/* pid velocity */
-	bool isPidVelocity;
-	float pidVelocity;
+	/* pid speed */
+	bool isPidSpeed;
+	float pidSpeed;
 	
 	/* pid error */
 	bool isPidError;
