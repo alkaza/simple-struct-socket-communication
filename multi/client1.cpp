@@ -36,7 +36,7 @@ int main()
 		databuf.isLaserScan = true;
 		float refscan = 0.1234567890123456;
 		for (int j=0,j<1080,j++)
-			databuf.laserScan[i] = refscan + 0.0000000000000001;
+			databuf.laserScan[j] = refscan + 0.0000000000000001;
 		
 		std::cout<<"Message Created"<<std::endl;
 		
