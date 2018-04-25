@@ -8,13 +8,29 @@
 /* TODO: Add specific data and bool type that you want to send */ 
 struct data
 {
-	/* For steering angle */
+	/* steering angle */
 	bool isSteeringAngle;	
-	float steeringAngle;
+	float32 steeringAngle;
 
-	/* for motor speed */
+	/* motor speed */
 	bool isMotorSpeed;
-	float motorSpeed;
+	float32 motorSpeed;
+	
+	/* servo pwm */
+	bool isServoPWM;
+	int16 servoPWM;
+	
+	/* esc pwm */
+	book isEscPWM;
+	int16 escPWM;
+	
+	/* laser scan */
+	bool isLaserScan;
+	float32 laserScan [];
+	
+	/* position */
+	bool isPos;
+	float64 pos;
 };
 
 #endif
