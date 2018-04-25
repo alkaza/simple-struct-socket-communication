@@ -34,7 +34,7 @@ struct data
 	
 	/* laser scan */
 	bool isLaserScan;
-	float laserScan [1080];
+	float laserScan[1080];
 	
 	/* position */
 	bool isPos;
