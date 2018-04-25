@@ -58,33 +58,31 @@ void* parseLoop(void *arg)
 		return NULL;
 
 	/* XXX: Fix below box for server part */
+	struct data databuf;
+	while(recv(newsockfd, &databuf, sizeof(databuf), 0) > 0)
 	{
-		struct data databuf;
-		while(recv(newsockfd, &databuf, sizeof(databuf), 0) > 0)
-		{
-			std::cout<<"New Message"<<std::endl;
-			if (databuf.isSteeringAngle)
-				std::cout<<"steering angle: "<<databuf.steeringAngle<<std::endl;
-			if (databuf.isMotorSpeed)
-				std::cout<<"motor speed: "<<databuf.motorSpeed<<std::endl;
-			if (databuf.isServoPWM)
-				std::cout<<"servo pwm: "<<databuf.servoPWM<<std::endl;
-			if (databuf.isEscPWM)
-				std::cout<<"esc pwm: "<<databuf.escPWM<<std::endl;
-			if (databuf.isPidSpeed)
-				std::cout<<"pid speed: "<<databuf.pidSpeed<<std::endl;
-			if (databuf.isPidError)
-				std::cout<<"pid error: "<<databuf.pidError<<std::endl;
-			if (databuf.isLaserScan){
-				std::cout<<"laser scan: ";
-				for (int i=0; i<1080; i++){
-					std::cout<<databuf.laserScan[i]<<" ";
-				}
-				std::cout<<std::endl;
+		std::cout<<"New Message"<<std::endl;
+		if (databuf.isSteeringAngle)
+			std::cout<<"steering angle: "<<databuf.steeringAngle<<std::endl;
+		if (databuf.isMotorSpeed)
+			std::cout<<"motor speed: "<<databuf.motorSpeed<<std::endl;
+		if (databuf.isServoPWM)
+			std::cout<<"servo pwm: "<<databuf.servoPWM<<std::endl;
+		if (databuf.isEscPWM)
+			std::cout<<"esc pwm: "<<databuf.escPWM<<std::endl;
+		if (databuf.isPidSpeed)
+			std::cout<<"pid speed: "<<databuf.pidSpeed<<std::endl;
+		if (databuf.isPidError)
+			std::cout<<"pid error: "<<databuf.pidError<<std::endl;
+		if (databuf.isLaserScan){
+			std::cout<<"laser scan: ";
+			for (int i=0; i<1080; i++){
+				std::cout<<databuf.laserScan[i]<<" ";
 			}
-			if (databuf.isPos)
-				std::cout<<"position: "<<databuf.pos<<std::endl;
+			std::cout<<std::endl;
 		}
+		if (databuf.isPos)
+			std::cout<<"position: "<<databuf.pos<<std::endl;
 	}
 	/* XXX: Fix above box for server part */
 
