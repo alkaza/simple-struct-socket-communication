@@ -28,25 +28,26 @@ int main()
 	}
 
 	/* XXX: Fix below box for client part */
+	int i;
+	for (i=0;i<10; i++)
 	{
-		int i;
-		for (i=0;i<10; i++)
-		{
-			struct data databuf = {};
+		struct data databuf = {};
 
-			/* is there is a data */
-			databuf.isMotorSpeed = true;
-			databuf.motorSpeed = 5 + i;
-			std::cout<<"Message Created"<<std::endl;
-			if (isConnected)
-				send(sockfd, &databuf, sizeof(databuf), 0);
+		/* if there is a data */
+		databuf.isLaserScan = true;
+		float refscan = 0.1234567890123456;
+		for (int j=0,j<1080,j++)
+			databuf.laserScan[i] = refscan + 0.0000000000000001;
+		
+		std::cout<<"Message Created"<<std::endl;
+		
+		if (isConnected)
+			send(sockfd, &databuf, sizeof(databuf), 0);
 		}
 	}
 	/* XXX: Fix above box for client part */
 
-
-
 	if (isConnected)
-			close(sockfd);
+		close(sockfd);
 	return 0;
 }
