@@ -28,25 +28,25 @@ int main()
 	}
 
 	/* XXX: Fix below box for client part */
+	int i;
+	for (i=0;i<10; i++)
 	{
-		int i;
-		for (i=0;i<10; i++)
-		{
-				if (i==4)
-						sleep(5);
-			struct data databuf = {};
+		struct data databuf = {};
 
-			/* is there is a data */
-			databuf.isSteeringAngle = true;
-			databuf.steeringAngle = 15 + i;
-			std::cout<<"Message created"<<std::endl;
-			if (isConnected)
-				send(sockfd, &databuf, sizeof(databuf), 0);
+		/* if there is a data */
+		databuf.isSteeringAngle = true;
+		databuf.steeringAngle = 10 + i;
+
+		databuf.isMotorSpeed = true;
+		databuf.motorSpeed = 25;
+			
+		std::cout<<"Message created"<<std::endl;
+		
+		if (isConnected)
+			send(sockfd, &databuf, sizeof(databuf), 0);
 		}
 	}
 	/* XXX: Fix above box for client part */
-
-
 
 	if (isConnected)
 			close(sockfd);
