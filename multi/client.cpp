@@ -28,8 +28,7 @@ int main()
 	}
 
 	/* XXX: Fix below box for client part */
-	int i;
-	for (i=0;i<10; i++)
+	for (int i=0;i<10; i++)
 	{
 		struct data databuf = {};
 
@@ -38,7 +37,7 @@ int main()
 		databuf.steeringAngle = 10 + i;
 
 		databuf.isMotorSpeed = true;
-		databuf.motorSpeed = 25;
+		databuf.motorSpeed = 25 + i;
 			
 		std::cout<<"Message created"<<std::endl;
 		
