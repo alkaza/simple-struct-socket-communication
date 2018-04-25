@@ -35,8 +35,8 @@ int main()
 			struct data databuf = {};
 
 			/* is there is a data */
-			databuf.isMotorSpeed = true;
-			databuf.motorSpeed = 1.2 + i;
+			databuf.isMotorVelocity = true;
+			databuf.motorVelocity = 5 + i;
 			std::cout<<"Message Created"<<std::endl;
 			if (isConnected)
 				send(sockfd, &databuf, sizeof(databuf), 0);
