@@ -21,7 +21,7 @@ struct data
 	int servoPWM;
 	
 	/* esc pwm */
-	book isEscPWM;
+	bool isEscPWM;
 	int escPWM;
 
 	/* pid speed */
